@@ -1,0 +1,35 @@
+========
+Policies
+========
+
+Terms of Use
+============
+
+..	toctree::
+	:maxdepth: 2
+
+	Terms of Use <policies/terms-of-use>
+	Privacy Policy <policies/privacy>
+	EULA <policies/eula>
+	EULA for β-software <policies/eula-beta>
+
+..	raw:: html
+
+	<hr/>
+
+..	raw:: latex
+
+	\noindent\rule{\textwidth}{1pt}
+
+
+Agreements of Services
+======================
+
+..	toctree::
+	:maxdepth: 2
+
+	Terms of Service <policies/terms-of-service>
+	Data Processing Agreement <policies/dpa>
+	Acceptable Use Policies <policies/aup>
+
+	sāf.ai Partnership Program <policies/ppa>

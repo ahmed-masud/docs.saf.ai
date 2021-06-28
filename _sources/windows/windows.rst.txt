@@ -1,0 +1,32 @@
+.. include: /includes.rst.txt
+
+==================================
+Integrating with Microsoft Windows
+==================================
+
+If it's your first time working with CEFS, please consider deploying it on a
+standalone environment before integrating it with :doc:`Active Directory Integration <active-directory-integration>`.
+
+Simple Setup
+============
+
+
+:fa:`exclamation-triangle` IMPORTANT NOTE
+-----------------------------------------
+
+If you are integrating with Active Directory, please STOP and follow the instructions provided in :doc:`active-directory-integration`.
+
+
+Installation
+============
+
+The easiest way to integrate with Microsoft Windows networks is to simply
+configure a samba service on your CEFS file-server with a selected number of common shares.
+
+This method is also good for creating an environment that will integrate
+with LDAP or RADIUS based authentications.
+
+Please go through :doc:`CEFS Installation </installation>` and configure a 
+CEFS file-server before continuing.
+
+1. 

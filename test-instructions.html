@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="CEFS" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="2.0.0-beta+1000" />
+    <meta name="docsearch:version" content="" />
+
+    <title>CEFS Test Instructions &mdash; CEFS 2.0.0-beta+1000 documentation</title>
+
+    <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/webfonts.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/fontawesome.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+<!-- linktags -->
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="CEFS 2.0.0-beta+1000 documentation" href="#" />
+    <link rel="up" title="Guides" href="guides.html" />
+    <link rel="next" title="Integrating with Microsoft Windows" href="windows/windows.html" />
+    <link rel="prev" title="CEFS Installation" href="installation.html" />
+<!-- /linktags -->
+<!-- extrahead --><!-- /extrahead -->
+    <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="page-header">
+            <div class="page-header-inner">
+<!-- pageheader -->
+<a href="/" title="saf.ai CEFS Documentation" class="logo">
+    <img src="_static/logo-flip.png" width="484" height="130" alt="TYPO3 Logo" class="logo-image" />
+</a>
+<!-- /pageheader -->
+            </div>
+        </div>
+
+        
+
+        <div class="page-main">
+            <div class="page-main-inner">
+                <div class="page-main-navigation">
+                    <nav>
+                        <input type="checkbox" id="toggleToc" class="toc-checkbox">
+                        <div class="toc-header"><div class="toc-actions">
+                                <label for="toggleToc" class="toc-toggle">
+                                    Menu
+                                </label>
+                            </div>
+                        </div>
+                        <div class="toc-collapse">
+                            <div class="toc" role="navigation" aria-label="main navigation">
+<!-- menu -->
+                                        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CEFS Command-line Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="guides.html">Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installation.html">CEFS Installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CEFS Test Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows/windows.html">Integrating with Microsoft Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="policies.html">Policies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="policies/terms-of-use.html">Terms of Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies/privacy.html">Privacy Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies/eula.html">EULA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies/eula-beta.html">EULA for β-software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies/terms-of-service.html">Terms of Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies/dpa.html">Data Processing Agreement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="policies/dpa-annex-a.html">DPA Annex A</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="policies/aup.html">Acceptable Use Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies/ppa.html">sāf.ai Partnership Program</a></li>
+</ul>
+</li>
+</ul>
+
+                                    <p class="caption"><span class="caption-text">PAGE CONTENTS</span></p>
+                                    <ul>
+<li><a class="reference internal" href="#">CEFS Test Instructions</a><ul>
+<li><a class="reference internal" href="#system-requirements">System requirements</a><ul>
+<li><a class="reference internal" href="#server">Server</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#windows-network-optional">Windows Network (Optional)</a><ul>
+<li><a class="reference internal" href="#pre-request">Pre-request</a></li>
+<li><a class="reference internal" href="#using-cefs-as-a-simple-network-share-windows-workgroup">Using CEFS as a Simple Network Share (Windows Workgroup)</a></li>
+<li><a class="reference internal" href="#active-directory">Active Directory</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation-tests">Installation &amp; Tests</a><ul>
+<li><a class="reference internal" href="#install">Install</a></li>
+<li><a class="reference internal" href="#create">Create</a></li>
+<li><a class="reference internal" href="#destroy">Destroy</a><ul>
+<li><a class="reference internal" href="#method-1">Method 1:</a></li>
+<li><a class="reference internal" href="#method-2">Method 2:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#recover">Recover</a></li>
+<li><a class="reference internal" href="#analyze">Analyze</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /menu -->
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="page-main-content">
+                    <div class="rst-content">
+<!-- pager-hidden.html -->
+
+        <a class="no-focus" accesskey="p" href="installation.html" tabindex="-1"></a>
+        <a class="no-focus" accesskey="n" href="windows/windows.html" tabindex="-1"></a>
+<!-- /pager-hidden.html -->
+<!-- breadcrumbs.html -->
+<div class="breadcrumb-bar" role="navigation" aria-label="breadcrumbs navigation">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+            <li class="breadcrumb-item"><a href="guides.html">Guides</a></li>
+        <li class="breadcrumb-item active" aria-current="page">CEFS Test Instructions</li>
+    </ol>
+        <div class="breadcrumb-additions">
+                <a class="btn btn-sm btn-light" href="_sources/test-instructions.rst.txt" rel="nofollow">
+                    <span class="btn-icon"><span class="fas fa-code"></span></span>
+                    <span class="btn-text">View source</span>
+                </a>
+        </div>
+</div>
+<!-- /breadcrumbs.html -->
+                        <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                            <div itemprop="articleBody">
+<!-- body -->
+    <ul class="horizbuttons-primary-m simple" id="test-instructions">
+<li><p><a class="reference internal" href="#windows-network"><span class="std std-ref">Windows Network</span></a></p></li>
+<li><p><a class="reference internal" href="#installation-tests"><span class="std std-ref">Installation &amp; Tests</span></a></p></li>
+</ul>
+<div class="section" id="cefs-test-instructions">
+<h1>CEFS Test Instructions<a class="headerlink" href="#cefs-test-instructions" title="Permalink to this headline">¶</a></h1>
+<p>This document is for CEFS version 2.0.0-beta+1000</p>
+<div class="section" id="system-requirements">
+<h2>System requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="server">
+<h3>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operating System</p></th>
+<th class="head"><p>Ubuntu Server 20.10
+(64-bit only)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hardware OR
+Virtual Machine</p></td>
+<td><ul class="simple">
+<li><p><strong>CPU</strong>  2.0GHz dual core x86_64</p></li>
+<li><p><strong>RAM</strong>  4GB RAM (8GB recommend)</p></li>
+<li><p><strong>DISK</strong> 40GB for root and
+100 GB for data mounted at
+<code class="docutils literal notranslate"><span class="pre">/srv/cefs</span></code></p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="windows-network-optional">
+<span id="windows-network"></span><h2>Windows Network (Optional)<a class="headerlink" href="#windows-network-optional" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pre-request">
+<h3>Pre-request<a class="headerlink" href="#pre-request" title="Permalink to this headline">¶</a></h3>
+<p>Recommended that you install Samba on the server using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install samba
+</pre></div>
+</div>
+<p>You can use CEFS with Windows in a variety of ways.
+There are many configurations here, please choose the one that works for your
+particular use-case.</p>
+</div>
+<div class="section" id="using-cefs-as-a-simple-network-share-windows-workgroup">
+<h3>Using CEFS as a Simple Network Share (Windows Workgroup)<a class="headerlink" href="#using-cefs-as-a-simple-network-share-windows-workgroup" title="Permalink to this headline">¶</a></h3>
+<p>Please make sure that a share drive is available over NFS or Samba.</p>
+</div>
+<div class="section" id="active-directory">
+<h3>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this headline">¶</a></h3>
+<p>When connecting CEFS server via SMB or NFSv4, please make sure that
+CEFS server is configured to be a domain member.</p>
+</div>
+</div>
+<div class="section" id="installation-tests">
+<span id="id1"></span><h2>Installation &amp; Tests<a class="headerlink" href="#installation-tests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install">
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Install CEFS. As per <a class="reference internal" href="installation.html"><span class="doc">CEFS Installation</span></a>.</p></li>
+<li><p>Set the environment variables to point to the CEFS partition and mount
+directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">CEFS_PARTITION</span><span class="o">=</span>/dev/sdb1 <span class="nv">CEFS_MOUNTDIR</span><span class="o">=</span>/srv/cefs
+</pre></div>
+</div>
+</li>
+<li><p>[OPTIONAL] Grab test data from <a class="reference external" href="https://saf.ai/downloads/beta/test-data">https://saf.ai/downloads/beta/test-data</a></p>
+<p><strong>Now let’s create, destroy, recover, and analyze!</strong></p>
+</li>
+</ol>
+</div>
+<div class="section" id="create">
+<h3>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>On client side, navigate to CEFS directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">CEFS_MOUNTDIR</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Copy or extract the test data in the directory. For example,
+if you grabbed 200.zip from <a class="reference external" href="https://saf.ai/downloads/beta/test-data">https://saf.ai/downloads/beta/test-data</a>, you can unzip it in
+the CEFS directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip <span class="m">200</span>.zip
+</pre></div>
+</div>
+</li>
+<li><p>Once your data is finished copying over, look at your CEFS server and list
+your recovery points using the below command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cefs recover list <span class="si">${</span><span class="nv">CEFS_PARTITION</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>This should look something like the following:</p>
+<img alt="_images/cefs-recover-list.png" src="_images/cefs-recover-list.png" />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You will notice that as the data copies in, the CEFS AI
+created various recovery points. You will also notice that the recovery
+points are marked as transient. These recovery points can be made into
+backups or permanent recovery points by recovering them.</p>
+</div>
+</li>
+<li><p>To make a recovery point available, you will need to turn a transient
+recovery point into a permanent recovery point. There are three ways in
+which you can use this capability:</p>
+<ol class="arabic">
+<li><p>Set up a schedule based on time or number of recovery points done.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: how to convert a checkpoint into a backup via schedule</p>
+</div>
+</li>
+<li><p>Manually set back up points based on important events.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cefs recover <span class="si">${</span><span class="nv">CEFS_PARTITION</span><span class="si">}</span> <span class="si">${</span><span class="nv">RECOVERY_ID</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Ask CEFS to set backup based on what it deems to be a major event.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TODO: how to set up conversion of a checkpoint into a backup AI intervention.</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="destroy">
+<h3>Destroy<a class="headerlink" href="#destroy" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-1">
+<h4>Method 1:<a class="headerlink" href="#method-1" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Manually delete your files</p></li>
+<li><p>Verify files are not available</p></li>
+</ol>
+</div>
+<div class="section" id="method-2">
+<h4>Method 2:<a class="headerlink" href="#method-2" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p>Install ransomware of choice. Or download and install ours from ……</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Procuring ransomware can be dangerous, only use trusted sources!</p>
+</div>
+</li>
+<li><p>Verify that your files are no longer accessible.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="recover">
+<h3>Recover<a class="headerlink" href="#recover" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Go into your CEFS server.</p></li>
+<li><p>List your recovery points:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cefs recover list <span class="si">${</span><span class="nv">CEFS_PARTITION</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Choose a recovery point based on the recovery id.</p></li>
+<li><p>Run recover command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cefs recover <span class="si">${</span><span class="nv">CEFS_PARTITION</span><span class="si">}</span> <span class="si">${</span><span class="nv">RECOVERY_ID</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>A directory gets created with your recovered files and the recover command
+will display the path. Navigate to the directory to check the data. You can
+prefix the command with cd and surround the recover command with $() to
+navigate there quickly like so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cefs recover memory <span class="si">${</span><span class="nv">CEFS_PARTITION</span><span class="si">}</span> <span class="o">{</span>RECOVERY_ID<span class="o">}</span>
+</pre></div>
+</div>
+<p>This should look something like the following:</p>
+<img alt="_images/cefs-recover-cd.png" src="_images/cefs-recover-cd.png" />
+</li>
+<li><p>Copy over what you wish to restore to “production”.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Notice that, not only has your <em>data been restored</em> but also your <strong>permissions and settings</strong>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="analyze">
+<h3>Analyze<a class="headerlink" href="#analyze" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>You may go into your created recovery point files and analyze how your data
+looks at a certain point in time.</p></li>
+<li><p>You may also compare the differences between pre and post attacked data to
+determine what files were being targeted.</p></li>
+<li><p>You will notice that the restored data has no traces of the payload.
+Restoring your data with sāf.ai is like turning back the clock.
+It does not fix the damaged data it simply removes it from production
+and gives you back your healthy data.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+<!-- /body -->
+                            </div>
+                        </div>
+<!-- pager.html -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="installation.html" title="Accesskey Alt(+Shift)+p">
+                Previous
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="windows/windows.html" title="Accesskey Alt(+Shift)+n">
+                Next
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+<!-- /pager.html -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="page-footer">
+<!-- footer.html -->
+<footer>
+    <div class="frame frame-ruler-before frame-background-dark">
+        <div class="frame-container">
+            <div class="frame-inner">
+                <div class="footer-additional">
+                    <p class="text-center">
+                        <a href="https://github.com/TYPO3-Documentation/sphinx_typo3_theme" rel="nofollow" target="_blank">
+                            TYPO3 Theme 4.4.4.dev1+g9adb58a
+                        </a>
+                    </p>
+                </div>
+                <div class="footer-meta">
+                    <div class="footer-meta-copyright">
+                        &copy; Copyright 2019-2021 sāf.ai, Inc. Made with love in Bethesda, MD, USA
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- /footer.html -->
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT: './',
+            VERSION: '2.0.0-beta+1000',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE: true
+        };
+    </script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/js/underscore.min.js"></script>
+    <script type="text/javascript" src="_static/js/doctools.min.js"></script>
+    <script type="text/javascript" src="_static/js/popper.min.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/js/theme.min.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/js/searchtools.min.js"></script>
+    <script type="text/javascript" src="_static/js/autocomplete.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function() { Search.loadIndex("searchindex.js"); });
+    </script>
+    <script type="text/javascript" id="searchindexloader"></script>
+<!-- scripts2 --><!-- /scripts2 -->
+<!-- footer2 --><!-- /footer2 -->
+
+</body>
+</html>

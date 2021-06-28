@@ -1,0 +1,201 @@
+.. include:: /includes.rst.txt
+
+.. _test-instructions:
+
+..	rst-class:: horizbuttons-primary-m
+
+	*	:ref:`Windows Network <windows-network>`
+	*	:ref:`Installation & Tests <installation-tests>`
+
+
+======================
+CEFS Test Instructions
+======================
+
+This document is for CEFS version |version|
+
+System requirements
+===================
+
+Server
+------
+
++------------------+-------------------------------------+
+| Operating System | Ubuntu Server 20.10                 |
+|                  | (64-bit only)                       |
++==================+=====================================+
+| Hardware OR      | - **CPU**  2.0GHz dual core x86_64  |
+| Virtual Machine  | - **RAM**  4GB RAM (8GB recommend)  |
+|                  | - **DISK** 40GB for root and        |
+|                  |   100 GB for data mounted at        |
+|                  |   ``/srv/cefs``                     |
++------------------+-------------------------------------+
+
+..	_windows-network:
+
+Windows Network (Optional)
+==========================
+
+Pre-request
+-----------
+
+Recommended that you install Samba on the server using:
+
+..	code-block:: bash
+
+	apt install samba
+
+You can use CEFS with Windows in a variety of ways.
+There are many configurations here, please choose the one that works for your 
+particular use-case.
+
+Using CEFS as a Simple Network Share (Windows Workgroup)
+--------------------------------------------------------
+
+Please make sure that a share drive is available over NFS or Samba.
+
+Active Directory
+----------------
+
+When connecting CEFS server via SMB or NFSv4, please make sure that 
+CEFS server is configured to be a domain member.
+
+..	_installation-tests:
+
+Installation & Tests
+====================
+
+Install
+-------
+
+#.	Install CEFS. As per :doc:`CEFS Installation</installation>`.
+
+#.	Set the environment variables to point to the CEFS partition and mount 
+	directory.
+
+	..	code-block:: bash
+
+		export CEFS_PARTITION=/dev/sdb1 CEFS_MOUNTDIR=/srv/cefs
+
+#.	[OPTIONAL] Grab test data from |testdata-url|
+
+	**Now let's create, destroy, recover, and analyze!**
+
+Create
+------
+
+#.	On client side, navigate to CEFS directory.
+
+	..	code-block:: bash
+
+		cd ${CEFS_MOUNTDIR}
+
+#.	Copy or extract the test data in the directory. For example, 
+	if you grabbed 200.zip from |testdata-url|, you can unzip it in 
+	the CEFS directory.
+
+	..	code-block:: bash
+
+		unzip 200.zip
+
+#.	Once your data is finished copying over, look at your CEFS server and list 
+	your recovery points using the below command:
+
+	..	code-block:: bash
+
+		cefs recover list ${CEFS_PARTITION}
+
+	This should look something like the following:
+
+	..	image:: /media/cefs-recover-list.png
+
+	..	important:: You will notice that as the data copies in, the CEFS AI 
+		created various recovery points. You will also notice that the recovery
+		points are marked as transient. These recovery points can be made into 
+		backups or permanent recovery points by recovering them.
+
+#.	To make a recovery point available, you will need to turn a transient 
+	recovery point into a permanent recovery point. There are three ways in 
+	which you can use this capability:
+
+	#.	Set up a schedule based on time or number of recovery points done.
+
+		..	warning:: TODO: how to convert a checkpoint into a backup via schedule
+
+	#.	Manually set back up points based on important events.
+
+		..	code-block:: bash
+
+			cefs recover ${CEFS_PARTITION} ${RECOVERY_ID}
+
+	#.	Ask CEFS to set backup based on what it deems to be a major event.
+
+		..	warning:: TODO: how to set up conversion of a checkpoint into a backup AI intervention.
+
+
+Destroy
+-------
+
+Method 1:
+~~~~~~~~~
+
+#.	Manually delete your files
+#.	Verify files are not available
+
+
+Method 2:
+~~~~~~~~~
+
+#.	Install ransomware of choice. Or download and install ours from ……
+
+	..	warning:: Procuring ransomware can be dangerous, only use trusted sources!
+
+#.	Verify that your files are no longer accessible.
+
+Recover
+-------
+
+#.	Go into your CEFS server.
+#.	List your recovery points:
+
+	..	code-block:: bash
+
+		cefs recover list ${CEFS_PARTITION}
+
+#.	Choose a recovery point based on the recovery id.
+#.	Run recover command:
+
+	..	code-block:: bash
+
+		cefs recover ${CEFS_PARTITION} ${RECOVERY_ID}
+
+#.	A directory gets created with your recovered files and the recover command
+	will display the path. Navigate to the directory to check the data. You can
+	prefix the command with cd and surround the recover command with $() to
+	navigate there quickly like so:
+
+	..	code-block:: bash
+
+		cefs recover memory ${CEFS_PARTITION} {RECOVERY_ID}
+
+	This should look something like the following:
+
+	..	image:: /media/cefs-recover-cd.png
+
+#.	Copy over what you wish to restore to "production".
+
+	..	important:: Notice that, not only has your *data been restored* but also your **permissions and settings**.
+
+Analyze
+-------
+
+#.	You may go into your created recovery point files and analyze how your data
+	looks at a certain point in time.
+
+#.	You may also compare the differences between pre and post attacked data to 
+	determine what files were being targeted.
+
+#.	You will notice that the restored data has no traces of the payload. 
+	Restoring your data with sāf.ai is like turning back the clock. 
+	It does not fix the damaged data it simply removes it from production 
+	and gives you back your healthy data.

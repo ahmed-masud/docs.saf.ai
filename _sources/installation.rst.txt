@@ -1,0 +1,50 @@
+.. include:: /includes.rst.txt
+
+.. _installation:
+
+=================
+CEFS Installation
+=================
+
+This document is for CEFS version |version|
+
+Prerequisites
+=============
+
+*	Ubuntu Server 20.10
+
+.. 	COMMENT
+	Redhat version 8
+
+*	Administration access
+
+*	RAM 16GB (minimum)
+
+.. _install:
+
+Installing CEFS
+===============
+
+1.	Get CEFS on your server.
+
+	.. include:: /_getting-started.rst.txt
+
+
+2.	Initialize a new CEFS store.
+
+	Initialize a store on a new partition and mount it to a location to run the file system on it.
+
+	..	code-block:: bash
+		:linenos:
+
+		export CEFS_PARTITION=/dev/sdb1 CEFS_MOUNTDIR=/srv/cefs
+		sudo cefs storage init ${CEFS_PARTITION}
+		sudo mkdir -p ${CEFS_MOUNTDIR}
+		sudo cefs filesystem mount ${CEFS_PARTITION} ${CEFS_MOUNTDIR}
+
+3. You can now use ``/srv/cefs`` for your storage needs.
+
+Testing your new CEFS filesystem
+================================
+
+-	Refer to CEFS test instructions for use scenarios at :doc:`Test Instructions </test-instructions>`

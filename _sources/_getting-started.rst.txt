@@ -1,0 +1,28 @@
+Download the appropriate installation file from sāf.ai/download:
+
+.. only:: html
+
+	.. tabs::
+
+		.. tab:: Linux
+
+			..	code-block:: bash
+				:linenos:
+				:substitutions:
+
+				curl -s |cefs-url| | sudo bash
+
+		.. tab:: Windows
+
+			.. note:: Native windows support is coming soon, meanwhile you can use Linux.
+
+
+.. only:: latex
+
+	..	code-block:: bash
+		:linenos:
+		:substitutions:
+
+		curl -s |cefs-url| | sudo bash
+
+

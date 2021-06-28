@@ -1,0 +1,46 @@
+
+=====================
+VAR Partner Addendum
+=====================
+
+..	raw:: latex
+
+	\pagebreak
+
+.. raw:: html
+
+	<div class="legal-block">
+
+
+This RESELLER PARTNER AGREEMENT (“Agreement”) is entered into as of September 18, 2020 (the “Effective Date”) by saf.ai, Inc., an Delaware corporation with offices at 7200 Wisconsin Ave, Bethesda, MD, 20814 USA (“sāf.ai”) and ___________________________________, a _________________________ corporation with offices at [insert Address] (“Reseller”) and describes the terms and conditions pursuant to which ASC will make the Services (as defined below) available for re-sale by Reseller.
+
+..	raw:: html
+
+	<div style='text-align: center'>
+
+..	raw:: latex
+
+	\begin{center}
+
+[signature page follows]
+
+..	raw:: html
+
+	</div> <!-- center alignment -->
+
+..	raw:: latex
+
+	\end{center}
+	\pagebreak
+
+
+By signing below, each party acknowledges that it has read and understood the terms of these Terms of Service and agrees to be bound by them.
+
+..	raw:: latex
+
+	\signatureblock{Ling Young}{Chief Operating Officer}[{Partner}]
+
+.. 	raw:: html
+
+	</div> <!--legal-block -->
+

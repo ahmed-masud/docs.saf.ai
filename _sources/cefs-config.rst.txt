@@ -1,0 +1,50 @@
+CEFS Config
+===========
+
+NAME
+----
+
+``cefs config`` - The self configurer
+
+
+DESCRIPTION
+-----------
+
+CEFS Config commands allow you to configure CEFS software and services itself.
+
+
+USAGE
+-----
+
+..	code-block:: bash
+
+	cefs config {COMMAND} [OPTIONS] {ARGS}
+
+
+SYNOPSIS
+--------
+
+========================================	=========================
+COMMAND										SUMMARY
+========================================	=========================
+``cefs config [ -h | --help ]``				Prints this help message.
+``cefs config [ -V | --version ]``			Prints current version.
+``cefs config upgrade [OPTIONS]``			Upgrade CEFS software.
+``cefs config upgradeable [OPTIONS]``		Check for CEFS update.
+========================================	=========================
+
+
+OPTIONS
+-------
+
+-h, --help								Prints help information
+
+-V, --version							Prints version information
+
+``upgrade``								- Upgrade CEFS software
+
+-c, --channel <channel>					Channel determines which build of CEFS to download, configure, and update
+
+``upgradeable``							- Check for CEFS update
+
+-c, --channel <channel>					Channel determines which build of CEFS to download, configure, and update

@@ -1,0 +1,63 @@
+CEFS Filesystem
+===============
+
+NAME
+----
+
+``cefs filesystem`` - The filesystem manager
+
+
+DESCRIPTION
+-----------
+
+CEFS Filesystem commands allow you to manage the organization of CEFS filesystems.
+
+
+USAGE
+-----
+
+..	code-block:: bash
+
+	cefs filesystem {COMMAND} [OPTIONS] {ARGS}
+
+
+SYNOPSIS
+--------
+
+========================================	=========================
+COMMAND										SUMMARY
+========================================	=========================
+``cefs filesystem [ -h | --help ]``			Prints this help message.
+``cefs filesystem [ -V | --version ]``		Prints current version.
+``cefs filesystem mkfs [OPTIONS]``			Create a filesystem.
+``cefs filesystem mount [OPTIONS]``			Mount a filesystem.
+``cefs filesystem umount``					Unmount a filesystem.
+========================================	=========================
+
+
+OPTIONS
+-------
+
+-h, --help								Prints help information
+
+-V, --version 							Prints version information
+
+``help``								- Prints this message or the help of the given subcommand(s)
+
+``mkfs``								- Initialize (create) a new CEFS filesystem
+
+-B, --backend <backend>					Backend-store determines what type of storage you want to use CEFS on possible values: flat-file, key-value]
+
+-o <options>							Advanced options (see documentation for details)
+
+-s, --source <source>					Source directory or block device, used to populate the data. If not specified, no data is populated.
+
+``mount``								- Mount CEFS filesystem
+
+-o <opts>								Storage driver options
+
+--source-driver <source-driver>			Front-end source-driver
+
+--storage-driver <storage-driver>		Back-end storage driver
+
+``umount``								- Unmount a CEFS filesystem

@@ -1,0 +1,6 @@
+.. include: /includes.rst.txt
+
+============================
+Active Directory Integration
+============================
+

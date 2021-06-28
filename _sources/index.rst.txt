@@ -1,0 +1,29 @@
+..	include:: /includes.rst.txt
+
+..	rst-class:: horizbuttons-primary-m
+
+	*	`saf.ai <https://saf.ai/>`_
+	*	:doc:`Installation <installation>`
+	*	:doc:`Command-line Reference <cli>`
+	*	:doc:`Test Instructions <test-instructions>`
+	*	:doc:`Windows Integration <windows/windows>`
+
+
+==================================================
+sāf.ai Cybernetic Engram File System Documentation
+==================================================
+
+Quick Start
+===========
+
+..	include:: /_getting-started.rst.txt
+
+Continue on to :doc:`Installation <installation>` for in-depth instructions or 
+:doc:`Test Instructions </test-instructions>` to test the new CEFS installation.
+
+..	toctree::
+	:hidden:
+
+	cli
+	guides
+	policies

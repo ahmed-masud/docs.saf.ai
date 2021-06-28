@@ -1,0 +1,124 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+ /* margin-bottom:.5em;
+ font-weight:600;
+ line-height:1.2; */
+ font-family: "Ubuntu", "Helvetica Neue", sans-serif;
+}
+
+@media only screen and (min-width: 1090px) {
+  .legal-block {
+    max-width: 8.5in;
+    margin: 0.5in auto;
+  }
+}
+
+.legal-block ol {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+.legal-block ol > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+.legal-block ol > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+  text-align: right;
+  min-width: 2.5em;
+  position: relative;
+}
+
+.legal-block li ol > li {
+  margin: 0;
+}
+
+.legal-block li ol > li:before {
+  content: counters(item, ".") " ";
+}
+
+.legal-block li ol.loweralpha,
+.legal-block li ol.lowerroman
+{
+  counter-reset: point;
+}
+
+.legal-block li ol.loweralpha > li,
+.legal-block li ol.lowerroman > li
+ {
+  counter-increment: point;
+}
+
+.legal-block li ol.loweralpha > li:before
+{
+  content: "(" counter(point, lower-alpha) ")";
+}
+
+.legal-block li ol.lowerroman > li:before {
+  content:  counter(point, lower-roman) ")";
+}
+
+.legal-block .table-responsive {
+    width: 100%;
+}
+
+.legal-block .table-responsive .head p+p {
+  font-weight: normal;
+}
+
+.legal-block .table-responsive .head,
+.legal-block .table-responsive td {
+  text-align: center;
+  vertical-align: top;
+}
+
+/* 
+.legal-block .table-responsive .head:first-child {
+  text-align: left;
+} */
+
+
+.legal-block .table-responsive p {
+  box-sizing: border-box;
+  margin: 0 0;
+}
+
+.legal-block .table-responsive > .signature-block {
+  background-color: transparent;
+  border-width: 0px;
+  border: none;
+}
+
+.legal-block .table-responsive > .signature-block  .row-odd > .head,
+.legal-block .table-responsive > .signature-block  .row-even > .head {
+  color: black;
+  background-color: initial;
+  border: none;
+}
+
+.table-bordered th, table.docutils:not(.field-list).signature-block th, .table-bordered td, table.docutils:not(.field-list).signature-block td {
+  border: none;
+  text-align: left;
+}
+
+.legal-block table.docutils:not(.field-list).signature-block
+  tbody tr:nth-of-type(2n+1)  {
+    background-color: transparent;
+    border: none;
+}

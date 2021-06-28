@@ -1,0 +1,58 @@
+CEFS Storage
+============
+
+NAME
+----
+
+``cefs storage`` - The storage controller
+
+
+DESCRIPTION
+-----------
+
+CEFS Storage commands allow you to control the backend storage.
+There are several storage-drivers that provide circumstantial benefits for
+contingent operational situations.
+
+
+USAGE
+-----
+
+..	code-block:: bash
+
+	cefs storage {COMMAND} [OPTIONS] {ARGS}
+
+
+SYNOPSIS
+--------
+
+====================================	=====================================
+COMMAND									SUMMARY
+====================================	=====================================
+``cefs storage [ -h | --help ]``		Prints this help message.
+``cefs storage [ -V | --version ]``		Prints current version.
+``cefs storage [ -v | --verbose]``		Prints verbose progress reports.
+``cefs storage bind``					Export back-end storage to front-end.
+``cefs storage init [OPTIONS]``			Initialize a new back-end storage.
+====================================	=====================================
+
+
+OPTIONS
+-------
+-h, --help					Prints help information
+
+-V, --version				Prints version information
+
+-v, --verbose				Increase reporting verbosity
+
+``help``					- Prints this message or the help of the given subcommand(s)
+
+``bind``					Export back-end storage to front-end storage.
+
+``init``					- Initialize a new storage back-end
+
+-B, --backend <backend>		Backend-storage determines what type of storage you want to use CEFS on. [possible values: flat-file, key-value]
+
+-o <options>				Advanced options (see documentation for details)
+
+-f, --from <source>			Source directory or block device, used to populate the data. If not specified, no data is populated.

@@ -1,0 +1,60 @@
+CEFS
+====
+
+NAME
+----
+
+``cefs`` - The Cybernetic Engram File System
+
+
+DESCRIPTION
+-----------
+
+CEFS is a fast and scalable data safeguard solution that includes commands
+to provide streamlined use for both high-level operations and low-level
+access to backend stores and mount points.
+Your application data transparently becomes self-healing and self-defending.
+
+
+USAGE
+-----
+
+..	code-block:: bash
+
+	cefs {COMMAND} {SUBCOMMAND} [OPTIONS] {ARGS}
+
+
+SYNOPSIS
+--------
+
+=============================	===============================================
+COMMAND							SUMMARY
+=============================	===============================================
+``cefs [ -h | --help ]``		Prints this help message.
+``cefs [ -V | --version ]``		Prints current version.
+``cefs [ -v | --verbose]``		Prints verbose progress reports.
+``cefs filesystem``				Use CEFS as a POSIX file-system.
+``cefs storage``				Set up the back end storage.
+``cefs recover``				Manage recovery points.
+``cefs config``					Configures CEFS software and services itself.
+=============================	===============================================
+
+
+OPTIONS
+-------
+
+-h, --help			Prints help information
+
+-V, --version		Prints version information
+
+-v, --verbose		Increase reporting verbosity
+
+``help``			- Prints this message or the help of the given subcommand(s)
+
+``filesystem``		- Use CEFS as a POSIX file-system.
+
+``storage``			- Set up the back end storage.
+
+``recover``			- Manage recovery points.
+
+``config``			- Configures CEFS software and services itself.

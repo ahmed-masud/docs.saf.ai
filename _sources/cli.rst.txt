@@ -1,0 +1,18 @@
+===========================
+CEFS Command-line Reference
+===========================
+
+..	_cefs-cli:
+..	include:: cefs-cli.rst
+
+..	_cefs-filesystem:
+..	include:: cefs-filesystem.rst
+
+..	_cefs-storage:
+..	include:: cefs-storage.rst
+
+..	_cefs-recover:
+..	include:: cefs-recover.rst
+
+..	_cefs-config:
+..	include:: cefs-config.rst

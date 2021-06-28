@@ -1,0 +1,25 @@
+.. cefs-setup:
+
+CEFS Setup
+==========
+
+NAME
+----
+``cefs setup`` - Setup commands allow you to configure CEFS software and services itself.
+
+======================================	===========================
+COMMAND									SUMMARY
+======================================	===========================
+``cefs setup [ -h| --help ]``			Prints this help message.
+``cefs setup [ -V| --version ]``		Prints current version.
+``cefs setup self-update``				Update CEFS software.
+======================================	===========================
+
+OPTIONS
+-------
+
+-h, --help								Prints help information
+
+-V, --version							Prints version information
+
+``self-update``							- Update CEFS software

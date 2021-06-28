@@ -1,0 +1,51 @@
+CEFS Recover
+============
+
+NAME
+----
+
+``cefs recover`` - The store recoverer
+
+
+DESCRIPTION
+-----------
+
+CEFS Recover commands allow you to manage recovery points.
+
+
+USAGE
+-----
+
+..	code-block:: bash
+
+	cefs recover {COMMAND} [OPTIONS] {ARGS}
+
+
+SYNOPSIS
+--------
+
+========================================	=========================
+COMMAND										SUMMARY
+========================================	=========================
+``cefs recover [ -h | --help ]``			Prints this help message.
+``cefs recover [ -V | --version ]``			Prints current version.
+``cefs recover``							Recover transient point.
+``cefs recover list``						Show recovery points.
+``cefs recover stores``						Show recoverable stores.
+========================================	=========================
+
+
+OPTIONS
+-------
+
+-h, --help								Prints help information
+
+-V, --version 							Prints version information
+
+``help``								- Prints this message or the help of the given subcommand(s)
+
+<storage-device> id#					Recover transient point from id#
+
+``list``								- Show recovery points
+
+``stores``								- Show recoverable storages
